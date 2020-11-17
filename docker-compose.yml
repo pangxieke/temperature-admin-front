@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  web:
+    image: registry.cn-shenzhen.aliyuncs.com/***/temperature-admin:f9c3a47
+    ports:
+      - 23337:23337
+    environment:
+      - NGINX_LISTEN_PORT=23337
+      - NGINX_SERVER_NAME=admintest-temperature.***.com
+      - NGINX_API_PREFIX=/admin/v1
+      - NGINX_API_PROXY_PASS=http://***:2337
